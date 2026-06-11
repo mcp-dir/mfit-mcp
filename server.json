@@ -1,0 +1,17 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.mcp-dir/mfit-mcp",
+  "title": "MFIT Personal",
+  "description": "Client, workout, body composition, retention and finance management for personal trainers.",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/mcp-dir/mfit-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.mcp.ai/p_mfit"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+# Smithery configuration for MFIT Personal
+# Schema: https://smithery.ai/docs/build/project-config
+# Remote HTTP MCP — server hosted at https://api.mcp.ai/p_mfit
+
+name: mfit-mcp
+displayName: "MFIT Personal"
+description: >
+  Gestão de alunos, treinos, avaliações físicas, retenção e finanças para personal trainers.
+
+version: 0.1.0
+license: MIT
+homepage: https://github.com/mcp-dir/mfit-mcp
+repository: https://github.com/mcp-dir/mfit-mcp
+
+tags:
+  - mfit
+  - brazil
+  - med
+  - vertical
+  - read-only
+
+# Remote HTTP MCP — sem startCommand local (servidor já hospedado)
+startCommand:
+  type: http
+  url: https://api.mcp.ai/p_mfit
+
+auth:
+  type: oauth2
+  resourceMetadataUrl: https://api.mcp.ai/p_mfit/.well-known/oauth-protected-resource
+  fallback:
+    type: agent-auth
+    description: >
+      Para clientes sem OAuth 2.1. O agente expõe uma tool authenticate(token).
+      Usuário gera o JWT em https://app.mcp.ai/agent-auth e cola no chat.
